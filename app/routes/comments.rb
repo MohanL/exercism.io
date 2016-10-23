@@ -73,6 +73,9 @@ module ExercismWeb
           redirect '/'
         end
 
+        # TODO(Mohan) notifcaition stuff
+        Notify.retracteveryone(submission, 'comment', current_user)
+
         nit.delete
         submission.save
         redirect "/submissions/#{key}"
